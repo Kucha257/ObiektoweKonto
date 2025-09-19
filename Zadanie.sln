@@ -1,25 +1,29 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36203.30 d17.14
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zadanie", "Zadanie\Zadanie.csproj", "{0B9E2DB8-DE53-405D-ACE5-49E1125CD62D}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0B9E2DB8-DE53-405D-ACE5-49E1125CD62D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0B9E2DB8-DE53-405D-ACE5-49E1125CD62D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0B9E2DB8-DE53-405D-ACE5-49E1125CD62D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0B9E2DB8-DE53-405D-ACE5-49E1125CD62D}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {F7FA4652-196B-4355-AA0B-52C436AD0A05}
-	EndGlobalSection
-EndGlobal
+using System;
+
+class Konto
+{
+    static void Main(string[] args)
+    {
+        Konto k1 = new Konto("13536", 182);
+        Console.WriteLine(k1.ToString());
+        Konto k2 = new Konto("727", 131);
+        Console.WriteLine(k2.ToString());
+        k1.Stan = k1.Stan - 10000;
+        k2.Stan = k2.Stan + 10000;
+        Console.WriteLine(k1.ToString());
+        Console.WriteLine(k2.ToString());
+    }
+    public string Numer { get; }
+    public decimal Stan { get; set; }
+    public Konto() { }
+    public Konto(string numer, decimal stan)
+    {
+        Numer = numer;
+        Stan = stan;
+    }
+
+    public override string ToString()
+    {
+        return Numer+" " +Stan ;
+    }
+}
